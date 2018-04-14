@@ -1,0 +1,1 @@
+enum User { A, B }

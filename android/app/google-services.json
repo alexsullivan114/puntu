@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "978605749420",
+    "firebase_url": "https://puntu-271bf.firebaseio.com",
+    "project_id": "puntu-271bf",
+    "storage_bucket": "puntu-271bf.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:978605749420:android:dbfc2eefae0ca39a",
+        "android_client_info": {
+          "package_name": "com.thoughtbot.chattychatchat"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "978605749420-uokh4hjp9ts1f2lv2aijecnahhe6a4t9.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDL5tNH78jwXP4ybUkG_vLTv_Lk-FI0Y-U"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
