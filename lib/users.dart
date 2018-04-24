@@ -1,1 +1,1 @@
-enum User { A, B }
+enum User { Puntu, Punti }

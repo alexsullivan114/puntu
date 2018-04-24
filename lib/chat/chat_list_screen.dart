@@ -1,22 +1,22 @@
-import 'package:chatty_chat_chat/chat_message.dart';
-import 'package:chatty_chat_chat/chat_message_list_item.dart';
-import 'package:chatty_chat_chat/messaging.dart';
+import 'package:chatty_chat_chat/chat/chat_message.dart';
+import 'package:chatty_chat_chat/chat/chat_message_item_widget.dart';
+import 'package:chatty_chat_chat/chat/messaging.dart';
 import 'package:chatty_chat_chat/users.dart';
 import 'package:flutter/material.dart';
 
-class MessageList extends StatefulWidget {
+class ChatListWidget extends StatefulWidget {
 
   @override
-  _MessageListState createState() {
-    return new _MessageListState();
+  _ChatWidgetState createState() {
+    return new _ChatWidgetState();
   }
 }
 
-class _MessageListState extends State<MessageList> {
+class _ChatWidgetState extends State<ChatListWidget> {
 
   List<ChatMessage> messages = [];
 
-  _MessageListState() {
+  _ChatWidgetState() {
     subscribeToMessages().listen((chatMessage) {
       setState(() {
         messages.add(chatMessage);
@@ -36,7 +36,7 @@ class _MessageListState extends State<MessageList> {
   }
 
   Widget _buildListItem(ChatMessage chatMessage) {
-    MainAxisAlignment alignment = chatMessage.user == User.A ? MainAxisAlignment.start : MainAxisAlignment.end;
+    MainAxisAlignment alignment = chatMessage.user == User.Puntu ? MainAxisAlignment.start : MainAxisAlignment.end;
     return new Row(
         mainAxisAlignment: alignment,
         children: <Widget>[

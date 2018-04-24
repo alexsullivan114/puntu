@@ -1,7 +1,7 @@
-import 'package:chatty_chat_chat/messaging.dart';
+import 'package:chatty_chat_chat/chat/messaging.dart';
 import 'package:flutter/material.dart';
 
-class ComposeMessage extends StatelessWidget {
+class ComposeMessageWidget extends StatelessWidget {
 
   final TextEditingController _controller = new TextEditingController();
 

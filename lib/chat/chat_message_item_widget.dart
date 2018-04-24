@@ -1,4 +1,4 @@
-import 'package:chatty_chat_chat/chat_message.dart';
+import 'package:chatty_chat_chat/chat/chat_message.dart';
 import 'package:chatty_chat_chat/users.dart';
 import 'package:flutter/material.dart';
 
@@ -10,7 +10,7 @@ class ChatMessageListItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    Color itemColor = _chatMessage.user == User.A ? Colors.blue : Colors.grey;
+    Color itemColor = _chatMessage.user == User.Puntu ? Colors.blue : Colors.grey;
     return new Container(
       padding: new EdgeInsets.all(15.0),
       decoration: new BoxDecoration(
