@@ -2,6 +2,7 @@ import 'dart:async';
 
 import 'package:chatty_chat_chat/chat/chat_message.dart';
 import 'package:chatty_chat_chat/users.dart';
+import 'package:chatty_chat_chat/users/current_user.dart';
 import 'package:firebase_database/firebase_database.dart';
 import 'package:flutter/foundation.dart';
 
@@ -10,12 +11,9 @@ final textKey = "text";
 final userKey = "user";
 
 sendMessage(String message) {
-
-  User user = defaultTargetPlatform == TargetPlatform.android ? User.Puntu : User.Punti;
-
   reference.push().set({
     textKey: message,
-    userKey: user.index,
+    userKey: currentUser().index,
   });
 
   defaultTargetPlatform;

@@ -1,4 +1,4 @@
-import 'package:chatty_chat_chat/chat/chat_list_screen.dart';
+import 'package:chatty_chat_chat/chat/chat_list_widget.dart';
 import 'package:chatty_chat_chat/chat/compose_message_widget.dart';
 import 'package:flutter/widgets.dart';
 
