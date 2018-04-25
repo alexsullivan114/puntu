@@ -28,10 +28,20 @@ class HomeWidget extends StatelessWidget {
           new IconButton(
               icon: new Icon(Icons.map),
               onPressed: () {
+                // TODO(): Map stuff once the maps API is up and running
+              }),
+
+          new IconButton(
+              icon: new Icon(Icons.language),
+              onPressed: () {
                 Navigator.push(
                   context,
                   new MaterialPageRoute(
-                      builder: (context) => new ChatWidget()
+                      builder: (context) {
+                        return new Scaffold(
+                          body: new ChatWidget(),
+                        );
+                      }
                   ),
                 );
               }),
