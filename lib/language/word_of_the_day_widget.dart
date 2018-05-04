@@ -1,3 +1,4 @@
+import 'package:chatty_chat_chat/language/compose_word_of_the_day_widget.dart';
 import 'package:chatty_chat_chat/language/word_of_the_day.dart';
 import 'package:chatty_chat_chat/language/word_of_the_day_streams.dart';
 import 'package:flutter/widgets.dart';
@@ -28,13 +29,14 @@ class _WordOfTheDayState extends State<WordOfTheDayWidget> {
     String english = (_words.isEmpty) ? "" : _words.last.englishText;
     return new Center(
         child: new Column(
-          mainAxisAlignment: MainAxisAlignment.center,
+//          mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             new Text(nepali,
               style: new TextStyle(fontSize: 48.0)
             ),
 
             new Text(english),
+            new ComposeWordOfTheDayWidget(),
           ],
         )
     );
