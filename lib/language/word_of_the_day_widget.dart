@@ -1,6 +1,8 @@
 import 'package:chatty_chat_chat/language/compose_word_of_the_day_widget.dart';
+import 'package:chatty_chat_chat/language/previous_words_of_the_day.dart';
 import 'package:chatty_chat_chat/language/word_of_the_day.dart';
 import 'package:chatty_chat_chat/language/word_of_the_day_streams.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
 class WordOfTheDayWidget extends StatefulWidget {
@@ -25,19 +27,30 @@ class _WordOfTheDayState extends State<WordOfTheDayWidget> {
   Widget build(BuildContext context) {
     String nepali = (_words.isEmpty) ? "" : _words.last.nepaliText;
     String english = (_words.isEmpty) ? "" : _words.last.englishText;
-    return new Stack(
+    return Stack(
       children: <Widget>[
-        new Center(
-          child: new Column(
+        Center(
+          child: Column(
             children: <Widget>[
-              new Text(nepali, style: new TextStyle(fontSize: 48.0)),
-              new Text(english),
+              FlatButton(
+                  child: Text(nepali, style: TextStyle(fontSize: 48.0)),
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) {
+                        return Scaffold(
+                          body: PreviousWordsOfTheDay(),
+                        );
+                      }),
+                    );
+                  }),
+              Text(english),
             ],
             mainAxisAlignment: MainAxisAlignment.center,
           ),
         ),
-        new Align(
-          child: new ComposeWordOfTheDayWidget(),
+        Align(
+          child: ComposeWordOfTheDayWidget(),
           alignment: Alignment.bottomCenter,
         ),
       ],

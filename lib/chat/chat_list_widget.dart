@@ -6,7 +6,6 @@ import 'package:flutter/scheduler.dart';
 import 'package:flutter/material.dart';
 
 class ChatListWidget extends StatefulWidget {
-
   @override
   _ChatWidgetState createState() {
     return new _ChatWidgetState();
@@ -14,7 +13,6 @@ class ChatListWidget extends StatefulWidget {
 }
 
 class _ChatWidgetState extends State<ChatListWidget> {
-
   List<ChatMessage> _messages = [];
 
   _ChatWidgetState() {
@@ -27,28 +25,24 @@ class _ChatWidgetState extends State<ChatListWidget> {
 
   @override
   Widget build(BuildContext context) {
-    return new ListView.builder(
-        itemBuilder: (context, index) {
-          if (index < _messages.length) {
-            return _buildListItem(_messages[index]);
-          } else {
-            return null;
-          }
-        });
+    return ListView.builder(itemBuilder: (context, index) {
+      if (index < _messages.length) {
+        return _buildListItem(_messages[index]);
+      } else {
+        return null;
+      }
+    });
   }
 
   Widget _buildListItem(ChatMessage chatMessage) {
     MainAxisAlignment alignment = chatMessage.user == User.Puntu
         ? MainAxisAlignment.start
         : MainAxisAlignment.end;
-    return new Row(
-        mainAxisAlignment: alignment,
-        children: <Widget>[
-          new Container(
-            padding: new EdgeInsets.all(5.0),
-            child: new ChatMessageListItem(chatMessage),
-          )
-        ]
-    );
+    return Row(mainAxisAlignment: alignment, children: <Widget>[
+      Container(
+        padding: EdgeInsets.all(5.0),
+        child: ChatMessageListItem(chatMessage),
+      )
+    ]);
   }
 }

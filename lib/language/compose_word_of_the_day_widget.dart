@@ -10,8 +10,7 @@ class ComposeWordOfTheDayWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return new Row(
-      mainAxisAlignment: MainAxisAlignment.center,
-      crossAxisAlignment: CrossAxisAlignment.center,
+      crossAxisAlignment: CrossAxisAlignment.end,
       children: <Widget>[
         new Flexible(
           child: new Container(
@@ -38,13 +37,16 @@ class ComposeWordOfTheDayWidget extends StatelessWidget {
               ),
               padding: new EdgeInsets.all(8.0)),
         ),
-        new FloatingActionButton(
-            onPressed: () {
-              addWordOfTheDay(new WordOfTheDay(
-                  _nepaliController.text, _englishController.text));
-            },
-            mini: true,
-            child: new Icon(Icons.send))
+        new Padding(
+          padding: new EdgeInsets.all(12.0),
+          child: new FloatingActionButton(
+              onPressed: () {
+                addWordOfTheDay(new WordOfTheDay(
+                    _nepaliController.text, _englishController.text));
+              },
+              mini: true,
+              child: new Icon(Icons.send)),
+        )
       ],
     );
   }

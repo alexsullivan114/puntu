@@ -4,46 +4,40 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
 class HomeWidget extends StatelessWidget {
-
   @override
   Widget build(BuildContext context) {
-    return new Center(
-      child: new Column(
+    return Center(
+      child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
-          new IconButton(
-            icon: new Icon(Icons.message),
+          IconButton(
+            icon: Icon(Icons.message),
             onPressed: () {
               Navigator.push(
                 context,
-                new MaterialPageRoute(
-                    builder: (context) {
-                      return new Scaffold(
-                        body: new ChatWidget(),
-                      );
-                    }
-                ),
+                MaterialPageRoute(builder: (context) {
+                  return Scaffold(
+                    body: ChatWidget(),
+                  );
+                }),
               );
             },
           ),
-          new IconButton(
-              icon: new Icon(Icons.map),
+          IconButton(
+              icon: Icon(Icons.map),
               onPressed: () {
                 // TODO(): Map stuff once the maps API is up and running
               }),
-
-          new IconButton(
-              icon: new Icon(Icons.language),
+          IconButton(
+              icon: Icon(Icons.language),
               onPressed: () {
                 Navigator.push(
                   context,
-                  new MaterialPageRoute(
-                      builder: (context) {
-                        return new Scaffold(
-                          body: new WordOfTheDayWidget(),
-                        );
-                      }
-                  ),
+                  MaterialPageRoute(builder: (context) {
+                    return Scaffold(
+                      body: WordOfTheDayWidget(),
+                    );
+                  }),
                 );
               }),
         ],
