@@ -6,7 +6,9 @@ import 'package:firebase_messaging/firebase_messaging.dart';
 
 FirebaseMessaging _firebaseMessaging = new FirebaseMessaging();
 
-void main() => runApp(new MainWidget());
+void main() {
+  runApp(new MainWidget());
+}
 
 class MainWidget extends StatefulWidget {
   // This widget is the root of your application.
