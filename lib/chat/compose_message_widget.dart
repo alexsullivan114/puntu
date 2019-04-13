@@ -3,29 +3,29 @@ import 'package:flutter/material.dart';
 
 class ComposeMessageWidget extends StatelessWidget {
 
-  final TextEditingController _controller = new TextEditingController();
+  final TextEditingController _controller =  TextEditingController();
 
   @override
   Widget build(BuildContext context) {
     return
-      new Container(
+       Container(
           color: Colors.white,
-          child: new Padding(
-              padding: new EdgeInsets.all(12.0),
-              child: new Row(
+          child:  Padding(
+              padding:  EdgeInsets.all(12.0),
+              child:  Row(
                   children: <Widget>[
-                    new Expanded(
-                      child: new TextField(
+                     Expanded(
+                      child:  TextField(
                         controller: _controller,
                       ),
                     ),
-                    new FloatingActionButton(
+                     FloatingActionButton(
                         onPressed: () {
                           sendMessage(_controller.text);
                           _controller.text = "";
                         },
                         mini: true,
-                        child: new Icon(Icons.send,
+                        child:  Icon(Icons.send,
                           color: Colors.white,
                         )
                     ),

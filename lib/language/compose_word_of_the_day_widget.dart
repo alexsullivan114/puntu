@@ -4,48 +4,48 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
 class ComposeWordOfTheDayWidget extends StatelessWidget {
-  final TextEditingController _nepaliController = new TextEditingController();
-  final TextEditingController _englishController = new TextEditingController();
+  final TextEditingController _nepaliController =  TextEditingController();
+  final TextEditingController _englishController =  TextEditingController();
 
   @override
   Widget build(BuildContext context) {
-    return new Row(
+    return Row(
       crossAxisAlignment: CrossAxisAlignment.end,
       children: <Widget>[
-        new Flexible(
-          child: new Container(
-              child: new Column(
+        Flexible(
+          child: Container(
+              child:  Column(
                 mainAxisSize: MainAxisSize.min,
                 children: <Widget>[
-                  new Flexible(
+                   Flexible(
                     child: TextField(
                       decoration:
-                          new InputDecoration(hintText: "Put dat Nepali here"),
+                           InputDecoration(hintText: "Put dat Nepali here"),
                       controller: _nepaliController,
                     ),
                     fit: FlexFit.loose,
                   ),
-                  new Flexible(
+                   Flexible(
                     child: TextField(
                       decoration:
-                          new InputDecoration(hintText: "Put dat english hurr"),
+                           InputDecoration(hintText: "Put dat english hurr"),
                       controller: _englishController,
                     ),
                     fit: FlexFit.loose,
                   ),
                 ],
               ),
-              padding: new EdgeInsets.all(8.0)),
+              padding:  EdgeInsets.all(8.0)),
         ),
-        new Padding(
-          padding: new EdgeInsets.all(12.0),
-          child: new FloatingActionButton(
+         Padding(
+          padding:  EdgeInsets.all(12.0),
+          child:  FloatingActionButton(
               onPressed: () {
-                addWordOfTheDay(new WordOfTheDay(
+                addWordOfTheDay( WordOfTheDay(
                     _nepaliController.text, _englishController.text));
               },
               mini: true,
-              child: new Icon(Icons.send)),
+              child:  Icon(Icons.send)),
         )
       ],
     );

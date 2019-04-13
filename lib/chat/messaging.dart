@@ -23,7 +23,7 @@ Stream<ChatMessage> subscribeToMessages() {
   return reference.onChildAdded.map((event) {
     int index = event.snapshot.value[userKey];
     User user = index == 0 ? User.Puntu : User.Punti;
-    return new ChatMessage(
+    return ChatMessage(
         event.snapshot.value[textKey],
         user
     );

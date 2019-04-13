@@ -20,6 +20,6 @@ Stream<WordOfTheDay> subscribeToWordsOfTheDay() {
   return reference.onChildAdded.map((event) {
     String nepali = event.snapshot.value[nepaliKey];
     String english = event.snapshot.value[englishKey];
-    return new WordOfTheDay(nepali, english);
+    return WordOfTheDay(nepali, english);
   });
 }

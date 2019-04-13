@@ -6,12 +6,12 @@ class ChatWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return new Column(
+    return  Column(
         children: <Widget>[
-          new Expanded(
-              child: new ChatListWidget()
+           Expanded(
+              child:  ChatListWidget()
           ),
-          new ComposeMessageWidget()
+           ComposeMessageWidget()
         ]
     );
   }

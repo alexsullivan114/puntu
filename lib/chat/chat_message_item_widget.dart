@@ -11,16 +11,16 @@ class ChatMessageListItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     Color itemColor = _chatMessage.user == User.Puntu ? Colors.blue : Colors.grey;
-    return new Container(
-      padding: new EdgeInsets.all(15.0),
-      decoration: new BoxDecoration(
+    return  Container(
+      padding:  EdgeInsets.all(15.0),
+      decoration:  BoxDecoration(
           color: itemColor,
           shape: BoxShape.rectangle,
-          borderRadius: new BorderRadius.all(new Radius.circular(5.0))
+          borderRadius:  BorderRadius.all( Radius.circular(5.0))
       ),
-      child: new Text(
+      child:  Text(
         _chatMessage.message,
-        style: new TextStyle(
+        style:  TextStyle(
             color: Colors.white
         ),
       ),

@@ -2,7 +2,6 @@ import 'package:chatty_chat_chat/chat/chat_message.dart';
 import 'package:chatty_chat_chat/chat/chat_message_item_widget.dart';
 import 'package:chatty_chat_chat/chat/messaging.dart';
 import 'package:chatty_chat_chat/users.dart';
-import 'package:flutter/scheduler.dart';
 import 'package:flutter/material.dart';
 
 class ChatListWidget extends StatefulWidget {

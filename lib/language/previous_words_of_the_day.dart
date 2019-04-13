@@ -66,7 +66,7 @@ class _FadingWordOfTheDayState extends State<FadingWordOfTheDay> {
           new AnimatedOpacity(
             child: Text(_wordOfTheDay.englishText),
             opacity: _visible ? 1.0 : 0.0,
-            duration: new Duration(milliseconds: 500),
+            duration: Duration(milliseconds: 500),
           ),
         ],
         mainAxisAlignment: MainAxisAlignment.center,

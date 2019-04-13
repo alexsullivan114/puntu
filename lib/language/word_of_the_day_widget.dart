@@ -8,7 +8,7 @@ import 'package:flutter/widgets.dart';
 class WordOfTheDayWidget extends StatefulWidget {
   @override
   _WordOfTheDayState createState() {
-    return new _WordOfTheDayState();
+    return _WordOfTheDayState();
   }
 }
 
