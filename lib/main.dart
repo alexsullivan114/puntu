@@ -1,6 +1,3 @@
-import 'package:chatty_chat_chat/chat/chat_list_widget.dart';
-import 'package:chatty_chat_chat/chat/chat_widget.dart';
-import 'package:chatty_chat_chat/chat/compose_message_widget.dart';
 import 'package:chatty_chat_chat/home/home_widget.dart';
 import 'package:chatty_chat_chat/users/current_user.dart';
 import 'package:firebase_database/firebase_database.dart';
@@ -37,6 +34,7 @@ class MainWidgetState extends State<MainWidget> {
   @override
   void initState() {
     super.initState();
+    _firebaseMessaging.requestNotificationPermissions();
     _firebaseMessaging.configure(
       onMessage: (Map<String, dynamic> message) {
         print("onMessage: $message");
@@ -50,10 +48,8 @@ class MainWidgetState extends State<MainWidget> {
     );
 
     _firebaseMessaging.getToken().then((token){
-      final reference = FirebaseDatabase.instance.reference().child('tokens');
-      reference.set({
-        currentUser().index.toString(): token
-      });
+      final reference = FirebaseDatabase.instance.reference().child('tokens/' + currentUser().index.toString());
+      reference.set(token);
     });
   }
 }
