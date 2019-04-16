@@ -23,7 +23,7 @@ class _PreviousWordsOfTheDayState extends State<PreviousWordsOfTheDay> {
 
   @override
   Widget build(BuildContext context) {
-    return PageView(children: _words.reversed.skip(1).map((wordOfTheDay) {
+    return PageView(children: _words.reversed.map((wordOfTheDay) {
       return _buildListItem(wordOfTheDay);
     }).toList());
   }
@@ -57,7 +57,7 @@ class _FadingWordOfTheDayState extends State<FadingWordOfTheDay> {
         children: <Widget>[
           FlatButton(
               child: Text(
-                  _wordOfTheDay.nepaliText, style: TextStyle(fontSize: 48.0)),
+                  _wordOfTheDay.nepaliText, style: TextStyle(fontSize: 48.0), textAlign: TextAlign.center),
               onPressed: () {
                 setState(() {
                   _visible = true;

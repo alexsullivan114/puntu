@@ -1,9 +1,10 @@
 import 'package:chatty_chat_chat/language/language_list_item.dart';
+import 'package:chatty_chat_chat/language/previous_words_of_the_day.dart';
+import 'package:chatty_chat_chat/language/word_of_the_day_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
 class LanguageHome extends StatelessWidget {
-
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -15,14 +16,29 @@ class LanguageHome extends StatelessWidget {
         crossAxisSpacing: 10.0,
         crossAxisCount: 2,
         children: <Widget>[
-          LanguageListItem(Colors.green, Icons.access_alarm, (){}),
-          LanguageListItem(Colors.orange, Icons.accessibility, (){}),
-          LanguageListItem(Colors.blue, Icons.add, (){}),
-          LanguageListItem(Colors.red, Icons.add_alert, (){}),
-          LanguageListItem(Colors.purple, Icons.album, (){}),
-          LanguageListItem(Colors.grey, Icons.ac_unit, (){}),
+          LanguageListItem(Colors.green, Icons.access_alarm, () {
+            showPage(context, PreviousWordsOfTheDay());
+          }),
+          LanguageListItem(Colors.orange, Icons.accessibility, () {}),
+          LanguageListItem(Colors.blue, Icons.add, () {
+            showPage(context, WordOfTheDayWidget());
+          }),
+          LanguageListItem(Colors.red, Icons.add_alert, () {}),
+          LanguageListItem(Colors.purple, Icons.album, () {}),
+          LanguageListItem(Colors.grey, Icons.ac_unit, () {}),
         ],
       ),
+    );
+  }
+
+  void showPage(BuildContext context, Widget widget) {
+    Navigator.push(
+      context,
+      MaterialPageRoute(builder: (context) {
+        return Scaffold(
+          body: widget,
+        );
+      }),
     );
   }
 }
