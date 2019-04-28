@@ -39,7 +39,7 @@ class _WordOfTheDayState extends State<WordOfTheDayWidget> {
                       context,
                       MaterialPageRoute(builder: (context) {
                         return Scaffold(
-                          body: PreviousWordsOfTheDay(),
+                          body: PreviousWordsOfTheDay(FirstDisplayOrder.nepali),
                         );
                       }),
                     );

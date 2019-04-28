@@ -17,7 +17,7 @@ class LanguageHome extends StatelessWidget {
         crossAxisCount: 2,
         children: <Widget>[
           LanguageListItem(Colors.green, Icons.access_alarm, () {
-            showPage(context, PreviousWordsOfTheDay());
+            showPage(context, PreviousWordsOfTheDay(FirstDisplayOrder.english));
           }),
           LanguageListItem(Colors.orange, Icons.accessibility, () {}),
           LanguageListItem(Colors.blue, Icons.add, () {
