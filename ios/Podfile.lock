@@ -107,7 +107,7 @@ DEPENDENCIES:
   - firebase_database (from `Pods/.symlinks/plugins/firebase_database/ios`)
   - firebase_messaging (from `Pods/.symlinks/plugins/firebase_messaging/ios`)
   - firebase_storage (from `Pods/.symlinks/plugins/firebase_storage/ios`)
-  - Flutter (from `Pods/.symlinks/flutter/ios`)
+  - Flutter (from `Pods/.symlinks/flutter/ios-release`)
   - google_sign_in (from `Pods/.symlinks/plugins/google_sign_in/ios`)
   - image_picker (from `Pods/.symlinks/plugins/image_picker/ios`)
 
@@ -143,7 +143,7 @@ EXTERNAL SOURCES:
   firebase_storage:
     :path: Pods/.symlinks/plugins/firebase_storage/ios
   Flutter:
-    :path: Pods/.symlinks/flutter/ios
+    :path: Pods/.symlinks/flutter/ios-release
   google_sign_in:
     :path: Pods/.symlinks/plugins/google_sign_in/ios
   image_picker:
@@ -151,12 +151,12 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   Firebase: 5ec5e863d269d82d66b4bf56856726f8fb8f0fb3
-  firebase_analytics: fcc60a9de4b8e07aa5af8941303a7f5fe6e0383f
-  firebase_auth: 27a5a77a032d557c18f8e223aaf8ec1368f6cdbc
-  firebase_core: c96aa8b2fcf7f5167d32f22034f502f9304952b8
-  firebase_database: dd62ab9f71967c9011ce2fd03a89e762dcc364df
-  firebase_messaging: a5f5d4a9491b660f33a1f94bd0596558f820bad1
-  firebase_storage: e34d30ff8bb57e691191b70e9d255ec2eba2351f
+  firebase_analytics: 7fa219488f2a781ca776bf72ecc66b6ac4511272
+  firebase_auth: 6023fc2e28feabd6571d9a105b678cce7978be90
+  firebase_core: ce5006bb48508ee4e71e0f429a3f519bb8ee2961
+  firebase_database: b78d1e592c4f3cf826497dae722116a937aa99e0
+  firebase_messaging: b25b2fa94e685146bcf9d706ed87b4e95cd2a17d
+  firebase_storage: 6dbb71176c8a85e171184f8775606c566433026d
   FirebaseAnalytics: 7ef69e76a5142f643aeb47c780e1cdce4e23632e
   FirebaseAuth: bf22cacf22c60ab454bf2636f556d8892b10b53f
   FirebaseCore: 90cb1c53d69b556f112a1bf72b5fcfaad7650790
@@ -164,17 +164,17 @@ SPEC CHECKSUMS:
   FirebaseInstanceID: 8d20d890d65c917f9f7d9950b6e10a760ad34321
   FirebaseMessaging: 75cdb862e86c30e0913a2ff307e48d49357c5b73
   FirebaseStorage: 0c223481c8f89ed300cf1239ddd2d9833622c65f
-  Flutter: 9d0fac939486c9aba2809b7982dfdbb47a7b0296
-  google_sign_in: cbeb57b96679823d14df6b2240b629b983a42d79
+  Flutter: 58dd7d1b27887414a370fcccb9e645c08ffd7a6a
+  google_sign_in: 27e70a98b529f0b076d4b19f231b81da28b1750b
   GoogleSignIn: d9ef55b10f0aa401a5de2747f59b725e4b9732ac
   GoogleToolboxForMac: 91c824d21e85b31c2aae9bb011c5027c9b4e738f
-  GTMOAuth2: c77fe325e4acd453837e72d91e3b5f13116857b2
+  GTMOAuth2: e8b6512c896235149df975c41d9a36c868ab7fba
   GTMSessionFetcher: 5fa5b80fd20e439ef5f545fb2cb3ca6c6714caa2
-  image_picker: ee00aab0487cedc80a304085219503cc6d0f2e22
+  image_picker: a211f28b95a560433c00f5cd3773f4710a20404d
   leveldb-library: 08cba283675b7ed2d99629a4bc5fd052cd2bb6a5
   nanopb: 5601e6bca2dbf1ed831b519092ec110f66982ca3
   Protobuf: 8a9838fba8dae3389230e1b7f8c104aa32389c03
 
 PODFILE CHECKSUM: dd1c0c2dd63e253cded2951056994739f27fb7cb
 
-COCOAPODS: 1.5.2
+COCOAPODS: 1.6.1

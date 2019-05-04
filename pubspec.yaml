@@ -2,6 +2,7 @@ name: chatty_chat_chat
 description: A chatty application for chatting.
 
 dependencies:
+
   flutter:
     sdk: flutter
   image_picker: 0.4.1
