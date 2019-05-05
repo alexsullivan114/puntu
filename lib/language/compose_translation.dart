@@ -16,7 +16,7 @@ class ComposeTranslation extends StatelessWidget {
               maxLines: null,
               textInputAction: TextInputAction.done,
               decoration: InputDecoration(
-                  labelText: "Nepali text",
+                  labelText: "Nepali",
                   border: OutlineInputBorder(),
                   contentPadding: EdgeInsets.all(32)),
               style: TextStyle(fontWeight: FontWeight.bold, fontSize: 42),
@@ -30,7 +30,7 @@ class ComposeTranslation extends StatelessWidget {
               minLines: null,
               maxLines: null,
               decoration: InputDecoration(
-                  labelText: "English text",
+                  labelText: "English",
                   border: OutlineInputBorder(),
                   contentPadding: EdgeInsets.all(32)),
               style: TextStyle(fontWeight: FontWeight.bold, fontSize: 42),
