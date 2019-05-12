@@ -63,7 +63,7 @@ class _ComposeTranslationState extends State<ComposeTranslation> {
                   style: TextStyle(color: Colors.white),
                 ),
                 color: Colors.blue,
-                onPressed: _savePressed(),
+                onPressed: () { _savePressed(context); }
               ),
             ),
           )
@@ -72,13 +72,11 @@ class _ComposeTranslationState extends State<ComposeTranslation> {
     );
   }
 
-  VoidCallback _savePressed() {
+  void _savePressed(BuildContext context) {
     if (_nepaliText?.isNotEmpty == true && _englishText?.isNotEmpty == true) {
-      return () {
-        addWordOfTheDay(WordOfTheDay(_nepaliText, _englishText));
-      };
-    } else {
-      return null;
+      addWordOfTheDay(WordOfTheDay(_nepaliText, _englishText));
+      SnackBar snackbar = SnackBar(content: Text("New translation saved!"));
+      Scaffold.of(context).showSnackBar(snackbar);
     }
   }
 }
