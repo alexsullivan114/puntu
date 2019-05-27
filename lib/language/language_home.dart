@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
 import 'compose_translation.dart';
+import 'edit_translations_widget.dart';
 
 class LanguageHome extends StatelessWidget {
   @override
@@ -21,7 +22,9 @@ class LanguageHome extends StatelessWidget {
           LanguageListItem(Colors.green, Icons.access_alarm, () {
             showPage(context, PreviousWordsOfTheDay(FirstDisplayOrder.english));
           }),
-          LanguageListItem(Colors.orange, Icons.accessibility, () {}),
+          LanguageListItem(Colors.orange, Icons.edit, () {
+            showPage(context, EditTranslationsWidget());
+          }),
           LanguageListItem(Colors.blue, Icons.add, () {
             showPage(context, ComposeTranslation());
           }),
