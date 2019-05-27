@@ -4,6 +4,8 @@ import 'package:chatty_chat_chat/language/word_of_the_day_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
+import 'compose_translation.dart';
+
 class LanguageHome extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -21,7 +23,7 @@ class LanguageHome extends StatelessWidget {
           }),
           LanguageListItem(Colors.orange, Icons.accessibility, () {}),
           LanguageListItem(Colors.blue, Icons.add, () {
-            showPage(context, WordOfTheDayWidget());
+            showPage(context, ComposeTranslation());
           }),
           LanguageListItem(Colors.red, Icons.add_alert, () {}),
           LanguageListItem(Colors.purple, Icons.album, () {}),
@@ -36,7 +38,7 @@ class LanguageHome extends StatelessWidget {
       context,
       MaterialPageRoute(builder: (context) {
         return Scaffold(
-          body: widget,
+          body: SafeArea(child: widget),
         );
       }),
     );
