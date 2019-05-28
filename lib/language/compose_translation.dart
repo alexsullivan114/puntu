@@ -74,7 +74,7 @@ class _ComposeTranslationState extends State<ComposeTranslation> {
 
   void _savePressed(BuildContext context) {
     if (_nepaliText?.isNotEmpty == true && _englishText?.isNotEmpty == true) {
-      addWordOfTheDay(WordOfTheDay(_nepaliText, _englishText));
+      addWordOfTheDay(WordOfTheDay(_nepaliText, _englishText, null));
       SnackBar snackbar = SnackBar(content: Text("New translation saved!"));
       Scaffold.of(context).showSnackBar(snackbar);
     }

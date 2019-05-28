@@ -4,8 +4,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
 class ComposeWordOfTheDayWidget extends StatelessWidget {
-  final TextEditingController _nepaliController =  TextEditingController();
-  final TextEditingController _englishController =  TextEditingController();
+  final TextEditingController _nepaliController = TextEditingController();
+  final TextEditingController _englishController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -14,38 +14,38 @@ class ComposeWordOfTheDayWidget extends StatelessWidget {
       children: <Widget>[
         Flexible(
           child: Container(
-              child:  Column(
+              child: Column(
                 mainAxisSize: MainAxisSize.min,
                 children: <Widget>[
-                   Flexible(
+                  Flexible(
                     child: TextField(
                       decoration:
-                           InputDecoration(hintText: "Put dat Nepali here"),
+                          InputDecoration(hintText: "Put dat Nepali here"),
                       controller: _nepaliController,
                     ),
                     fit: FlexFit.loose,
                   ),
-                   Flexible(
+                  Flexible(
                     child: TextField(
                       decoration:
-                           InputDecoration(hintText: "Put dat english hurr"),
+                          InputDecoration(hintText: "Put dat english hurr"),
                       controller: _englishController,
                     ),
                     fit: FlexFit.loose,
                   ),
                 ],
               ),
-              padding:  EdgeInsets.all(8.0)),
+              padding: EdgeInsets.all(8.0)),
         ),
-         Padding(
-          padding:  EdgeInsets.all(12.0),
-          child:  FloatingActionButton(
+        Padding(
+          padding: EdgeInsets.all(12.0),
+          child: FloatingActionButton(
               onPressed: () {
-                addWordOfTheDay( WordOfTheDay(
-                    _nepaliController.text, _englishController.text));
+                addWordOfTheDay(WordOfTheDay(
+                    _nepaliController.text, _englishController.text, null));
               },
               mini: true,
-              child:  Icon(Icons.send)),
+              child: Icon(Icons.send)),
         )
       ],
     );

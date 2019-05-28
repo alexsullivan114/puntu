@@ -14,9 +14,9 @@ class EditTranslationsState extends State<EditTranslationsWidget> {
   List<WordOfTheDay> _words = [];
 
   EditTranslationsState() {
-    subscribeToWordsOfTheDay().listen((wordOfTheDay) {
+    subscribeToWordsOfTheDayList().listen((newWords) {
       setState(() {
-        _words.add(wordOfTheDay);
+        _words = newWords;
       });
     });
   }
@@ -44,6 +44,7 @@ class EditTranslationsState extends State<EditTranslationsWidget> {
                 ),
               ),
               InkWell(
+                onTap: (){ deleteWordOfTheDay(word); },
                 splashColor: Colors.blue.withAlpha(30),
                 child: Icon(Icons.delete),
               )
