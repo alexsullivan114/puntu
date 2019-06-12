@@ -3,17 +3,17 @@ import 'package:chatty_chat_chat/language/word_of_the_day_streams.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
-class EditTranslationsWidget extends StatefulWidget {
+class DeleteTranslationsWidget extends StatefulWidget {
   @override
   State createState() {
-    return EditTranslationsState();
+    return DeleteTranslationsState();
   }
 }
 
-class EditTranslationsState extends State<EditTranslationsWidget> {
+class DeleteTranslationsState extends State<DeleteTranslationsWidget> {
   List<WordOfTheDay> _words = [];
 
-  EditTranslationsState() {
+  DeleteTranslationsState() {
     subscribeToWordsOfTheDayList().listen((newWords) {
       setState(() {
         _words = newWords;
@@ -33,18 +33,12 @@ class EditTranslationsState extends State<EditTranslationsWidget> {
             child: Row(children: [
               Container(
                   width: 200,
-                  child:
-                      Text(word.nepaliText, style: TextStyle(fontSize: 24))),
+                  child: Text(word.nepaliText, style: TextStyle(fontSize: 24))),
               Spacer(),
-              Padding(
-                padding: const EdgeInsets.only(left: 32, right: 32),
-                child: InkWell(
-                  splashColor: Colors.blue.withAlpha(30),
-                  child: Icon(Icons.edit),
-                ),
-              ),
               InkWell(
-                onTap: (){ deleteWordOfTheDay(word); },
+                onTap: () {
+                  deleteWordOfTheDay(word);
+                },
                 splashColor: Colors.blue.withAlpha(30),
                 child: Icon(Icons.delete),
               )
