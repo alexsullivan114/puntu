@@ -8,8 +8,8 @@ class ComposeTranslation extends StatefulWidget {
 }
 
 class _ComposeTranslationState extends State<ComposeTranslation> {
-  String _nepaliText;
-  String _englishText;
+  TextEditingController _nepaliController = TextEditingController();
+  TextEditingController _englishController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -22,11 +22,7 @@ class _ComposeTranslationState extends State<ComposeTranslation> {
               expands: true,
               maxLines: null,
               textInputAction: TextInputAction.done,
-              onChanged: (newText) {
-                setState(() {
-                  _nepaliText = newText;
-                });
-              },
+              controller: _nepaliController,
               decoration: InputDecoration(
                   labelText: "Nepali",
                   border: OutlineInputBorder(),
@@ -40,11 +36,7 @@ class _ComposeTranslationState extends State<ComposeTranslation> {
               textInputAction: TextInputAction.done,
               expands: true,
               maxLines: null,
-              onChanged: (newText) {
-                setState(() {
-                  _englishText = newText;
-                });
-              },
+              controller: _englishController,
               decoration: InputDecoration(
                   labelText: "English",
                   border: OutlineInputBorder(),
@@ -58,13 +50,14 @@ class _ComposeTranslationState extends State<ComposeTranslation> {
               width: double.infinity,
               height: 40,
               child: RaisedButton(
-                child: Text(
-                  "Save",
-                  style: TextStyle(color: Colors.white),
-                ),
-                color: Colors.blue,
-                onPressed: () { _savePressed(context); }
-              ),
+                  child: Text(
+                    "Save",
+                    style: TextStyle(color: Colors.white),
+                  ),
+                  color: Colors.blue,
+                  onPressed: () {
+                    _savePressed(context);
+                  }),
             ),
           )
         ],
@@ -73,10 +66,14 @@ class _ComposeTranslationState extends State<ComposeTranslation> {
   }
 
   void _savePressed(BuildContext context) {
-    if (_nepaliText?.isNotEmpty == true && _englishText?.isNotEmpty == true) {
-      addWordOfTheDay(WordOfTheDay(_nepaliText, _englishText, null));
+    if (_nepaliController.text?.isNotEmpty == true &&
+        _englishController.text?.isNotEmpty == true) {
+      addWordOfTheDay(
+          WordOfTheDay(_nepaliController.text, _englishController.text, null));
       SnackBar snackbar = SnackBar(content: Text("New translation saved!"));
       Scaffold.of(context).showSnackBar(snackbar);
+      _nepaliController.clear();
+      _englishController.clear();
     }
   }
 }
