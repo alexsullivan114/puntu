@@ -1,5 +1,5 @@
-import 'package:chatty_chat_chat/language/word_of_the_day.dart';
-import 'package:chatty_chat_chat/language/word_of_the_day_streams.dart';
+import 'package:chatty_chat_chat/language/translation.dart';
+import 'package:chatty_chat_chat/language/word_streams.dart';
 import 'package:flutter/material.dart';
 
 class ComposeTranslation extends StatefulWidget {
@@ -69,7 +69,7 @@ class _ComposeTranslationState extends State<ComposeTranslation> {
     if (_nepaliController.text?.isNotEmpty == true &&
         _englishController.text?.isNotEmpty == true) {
       addWordOfTheDay(
-          WordOfTheDay(_nepaliController.text, _englishController.text, null));
+          Translation(_nepaliController.text, _englishController.text, null));
       SnackBar snackbar = SnackBar(content: Text("New translation saved!"));
       Scaffold.of(context).showSnackBar(snackbar);
       _nepaliController.clear();
