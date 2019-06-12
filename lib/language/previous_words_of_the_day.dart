@@ -70,26 +70,37 @@ class _FadingWordOfTheDayState extends State<FadingWordOfTheDay> {
         ? _wordOfTheDay.englishText
         : _wordOfTheDay.nepaliText;
 
-    return Center(
-      child: Column(
-        children: <Widget>[
-          FlatButton(
-              child: Text(questionText,
-                  style: TextStyle(fontSize: 48.0),
-                  textAlign: TextAlign.center),
-              onPressed: () {
-                setState(() {
-                  _visible = true;
-                });
-              }),
-          new AnimatedOpacity(
-            child: Text(answerText),
-            opacity: _visible ? 1.0 : 0.0,
-            duration: Duration(milliseconds: 500),
+    return Column(
+      children: <Widget>[
+        Spacer(),
+        FlatButton(
+            child: Text(questionText,
+                style: TextStyle(fontSize: 48.0),
+                textAlign: TextAlign.center),
+            onPressed: () {
+              setState(() {
+                _visible = true;
+              });
+            }),
+        new AnimatedOpacity(
+          child: Text(answerText),
+          opacity: _visible ? 1.0 : 0.0,
+          duration: Duration(milliseconds: 500),
+        ),
+        Spacer(),
+        Padding(
+          padding: const EdgeInsets.only(bottom: 50.0),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: <Widget>[
+              InkWell(child: Icon(Icons.check_circle_outline, size: 50, color: Colors.green.shade900)),
+              SizedBox(width: 50),
+              InkWell(child: Icon(Icons.cancel, size: 50, color: Colors.red.shade900))
+            ],
           ),
-        ],
-        mainAxisAlignment: MainAxisAlignment.center,
-      ),
+        )
+      ],
+      mainAxisAlignment: MainAxisAlignment.center,
     );
   }
 }
