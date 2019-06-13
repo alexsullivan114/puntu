@@ -18,10 +18,14 @@ class PreviousWordsOfTheDay extends StatefulWidget {
   }
 }
 
-class _PreviousWordsOfTheDayState extends State<PreviousWordsOfTheDay> {
+class _PreviousWordsOfTheDayState extends State<PreviousWordsOfTheDay>
+    with TickerProviderStateMixin {
   final FirstDisplayOrder _displayOrder;
   List<Translation> _words = [];
   PageController _controller = PageController();
+  AnimationController _animationController;
+  Animation _animation;
+  Color _animationColor = Colors.green.shade200;
 
   _PreviousWordsOfTheDayState(this._displayOrder) {
     subscribeToWordsOfTheDay().listen((wordOfTheday) {
@@ -32,23 +36,57 @@ class _PreviousWordsOfTheDayState extends State<PreviousWordsOfTheDay> {
   }
 
   @override
+  void initState() {
+    super.initState();
+    _animationController =
+        AnimationController(vsync: this, duration: Duration(milliseconds: 200));
+    _animation =
+        CurvedAnimation(parent: _animationController, curve: Curves.easeIn);
+    _animationController.addStatusListener((status) {
+      if (status == AnimationStatus.completed) {
+        _animationController.reverse();
+      }
+    });
+  }
+
+  @override
   Widget build(BuildContext context) {
     return PageView(
         controller: _controller,
         children: _words.reversed.map((wordOfTheDay) {
-          return FadingWordOfTheDay(wordOfTheDay, _displayOrder, () {
-            _positiveClicked(wordOfTheDay);
-          }, () {
-            _negativeClicked(wordOfTheDay);
-          });
+          return Stack(
+            children: [
+              FadeTransition(
+                opacity: _animation,
+                child: Container(
+                  color: _animationColor,
+                ),
+              ),
+              FadingWordOfTheDay(wordOfTheDay, _displayOrder, () {
+                _positiveClicked(wordOfTheDay);
+              }, () {
+                _negativeClicked(wordOfTheDay);
+              })
+            ],
+          );
         }).toList());
   }
 
   void _positiveClicked(Translation word) {
-    _controller.nextPage(duration: Duration(milliseconds: 500), curve: Curves.ease);
+    setState(() {
+      _animationColor = Colors.green.shade200;
+    });
+    _controller.nextPage(
+        duration: Duration(milliseconds: 500), curve: Curves.ease);
+    _animationController.forward();
   }
 
   void _negativeClicked(Translation word) {
-    _controller.nextPage(duration: Duration(milliseconds: 500), curve: Curves.ease);
+    setState(() {
+      _animationColor = Colors.red.shade200;
+    });
+    _controller.nextPage(
+        duration: Duration(milliseconds: 500), curve: Curves.ease);
+    _animationController.forward();
   }
 }
