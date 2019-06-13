@@ -1,11 +1,10 @@
 import 'package:chatty_chat_chat/language/language_list_item.dart';
-import 'package:chatty_chat_chat/language/previous_words_of_the_day.dart';
-import 'package:chatty_chat_chat/language/word_of_the_day_widget.dart';
+import 'package:chatty_chat_chat/language/wordoftheday/previous_words_of_the_day.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
-import 'compose_translation.dart';
-import 'delete_translations_widget.dart';
+import 'package:chatty_chat_chat/language/compose/compose_translation.dart';
+import 'package:chatty_chat_chat/language/edit/delete_translations_widget.dart';
 
 class LanguageHome extends StatelessWidget {
   @override
@@ -41,7 +40,10 @@ class LanguageHome extends StatelessWidget {
       context,
       MaterialPageRoute(builder: (context) {
         return Scaffold(
-          body: SafeArea(child: widget),
+          body: SafeArea(
+            child: widget,
+            top: false,
+          ),
         );
       }),
     );

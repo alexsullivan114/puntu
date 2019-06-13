@@ -1,5 +1,5 @@
-import 'package:chatty_chat_chat/language/word_of_the_day.dart';
-import 'package:chatty_chat_chat/language/word_of_the_day_streams.dart';
+import 'package:chatty_chat_chat/language/translation.dart';
+import 'package:chatty_chat_chat/language/word_streams.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
@@ -11,7 +11,7 @@ class DeleteTranslationsWidget extends StatefulWidget {
 }
 
 class DeleteTranslationsState extends State<DeleteTranslationsWidget> {
-  List<WordOfTheDay> _words = [];
+  List<Translation> _words = [];
 
   DeleteTranslationsState() {
     subscribeToWordsOfTheDayList().listen((newWords) {
@@ -27,7 +27,7 @@ class DeleteTranslationsState extends State<DeleteTranslationsWidget> {
         itemCount: _words.length,
         padding: EdgeInsets.all(16),
         itemBuilder: (BuildContext context, int index) {
-          WordOfTheDay word = _words[index];
+          Translation word = _words[index];
           return Padding(
             padding: const EdgeInsets.only(top: 24, bottom: 34),
             child: Row(children: [

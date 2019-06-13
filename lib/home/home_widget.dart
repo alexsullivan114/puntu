@@ -1,6 +1,5 @@
 import 'package:chatty_chat_chat/chat/chat_widget.dart';
 import 'package:chatty_chat_chat/language/language_home.dart';
-import 'package:chatty_chat_chat/language/word_of_the_day_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
