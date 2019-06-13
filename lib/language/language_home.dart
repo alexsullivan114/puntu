@@ -40,7 +40,10 @@ class LanguageHome extends StatelessWidget {
       context,
       MaterialPageRoute(builder: (context) {
         return Scaffold(
-          body: SafeArea(child: widget),
+          body: SafeArea(
+            child: widget,
+            top: false,
+          ),
         );
       }),
     );
